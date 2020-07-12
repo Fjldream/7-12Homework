@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /*
+        Math.abs(x) 返回x的绝对值。
+        Math.round(x) 返回x四舍五入之后的整数值
+        Math.ceil(x) 返回x的近似值， 向上取整
+        Math.floor(x) 返回x的近似值， 向下取整
+        Math.max(x, y) 返回x, y中的最大值
+        Math.min(x, y) 返回x, y中的最小值
+        Math.random() 返回一个0~1 之间的数字
+        Math.trunc(x) 将x的小数部分去除， 返回整数部分(ie不能使用)
+        Math.pow(x, y) 取x的y次幂
+        Math.sqrt(x) 返回x的平方根
+        Math.sin(x) 返回x的正弦值
+        Math.cos(x) 返回x的余弦值
+        Math.tan(x) 返回x的正切值
+        Math.asin(x) 返回x的反正弦值
+        Math.acos(x) 返回x的反余弦值
+        Math.atan(x) 返回x的反正切值
+        */
+
+        //可把 Number 四舍五入为指定小数位数的数字
+        var num = 36.555;
+        console.log(num.toFixed(2));
+        var num1 = -5;
+        console.log(Math.abs(num1));
+        console.log(Math.round(num));
+
+        console.log(Math.ceil(num));
+        console.log(Math.floor(num));
+        console.log(Math.max(num1, num));
+        console.log(Math.random());
+        console.log(Math.trunc(num));
+        console.log(Math.pow(num, num1));
+        var x = 36;
+        console.log(Math.sqrt(x));
+        console.log(Math.sin(Math.PI / 6));
+    </script>
+</body>
+
+</html>

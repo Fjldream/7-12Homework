@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>arr</title>
+</head>
+
+<body>
+    <script>
+        var arr = [1, 2, 3];
+        arr.push(4);
+        console.log(arr);
+        //arr.unshift(); 向数组的开头添加函数
+        arr.unshift(0);
+        console.log(arr);
+        //arr.pop(); 删除末尾的元素
+        arr.pop();
+        console.log(arr);
+        //arr.shift(); 开头删除一个元素
+        arr.shift();
+        console.log(arr);
+        arr.push(4);
+        arr.push(4);
+        arr.push(4);
+        arr.push(4);
+        arr.unshift(0);
+        arr.unshift(-1);
+        console.log(arr);
+        //arr.splice(位置，删除元素的个数，要追加的元素); 任意位置添加删除
+        arr.splice(1, 1);
+        console.log(arr);
+        arr.splice(1, 0, 0);
+        console.log(arr);
+        //arr.join("分隔符") 使用分隔符将数组数据隔开变为字符串
+        console.log(arr.join('.'));
+        /*
+        arr.slice(截取的起始下标,结束下标) 数组的截取
+        截取时，包含起始下标，不包含结束下标
+        不修改原数组
+        返回值是截取到的数组
+        参数可以是负数，负数表示倒数，只传一个参数表示从起始下标截取到最后*/
+        console.log(arr.slice(0, 4));
+        var arr2 = ['s', 'b'];
+        console.log(arr.concat(arr2));
+        console.log(arr.concat(arr2, ['f']));
+        //arr.indexOf(值); 查找某个值在数组中第一次出现的下标
+        console.log(arr.concat(arr2, ['f']).indexOf('f'));
+        //arr.lastIndexOf(值); 倒叙查找某个值在数组中第一次出现的位置
+        //         arr.sort() 数组的排序
+        // 如果没有参数，则从字符的编码开始按顺序排
+        // 如果有参数，这个参数必须是一个函数（回调函数）这个回调函数有两个参数，分别是a，b
+        // 修改原数组
+        var arr3 = [1, 5, 6, 99, 52, 663, 22, 66, 552, 6, 622];
+        // arr3.sort(function(a,b){
+        // //a-b 正序，
+        // //b-a 倒序，  
+        // return a-b;
+        // })
+        // console.log(arr3);
+        // // 控制台输出
+        // // (11) [1, 5, 6, 6, 22, 52, 66, 99, 552, 622, 663]
+        // //箭头函数
+        // arr.sort((a,b)=>a-b)     //正序，
+        // arr.sort((a,b)=>b-a)     //倒序，
+
+        arr.sort(function (a, b) {
+            return b - a;
+        });
+        console.log(arr);
+        //         arr.forEach() 遍历数组
+
+        // 接收一个回调函数，回调函数第一个参数是 数组值
+        // 第二个参数是 下标
+        var arr3 = [1, 5, 6, 99, 52, 663, 22, 66, 552, 6, 622];
+        arr3.forEach(function (value, index) {
+            console.log(index, value)
+        })
+        //         arr.filter() 过滤（根据条件筛选数组元素）
+
+        // 根据回调函数的返回值进行元素筛选
+        // 返回值是true，该元素会保留
+        // 返回值是false，该元素跳过
+        // 不修改原数组
+        // 返回值是筛选之后的数组
+        //    
+        var newarr = arr.filter(function (value, index) {
+            return value != 4;
+        });
+        console.log(newarr);
+        var person = [{
+                name: "张三",
+                age: 20,
+                sex: "男"
+            },
+            {
+                name: "李四",
+                age: 19,
+                sex: "女"
+            },
+            {
+                name: "王五",
+                age: 22,
+                sex: "男"
+            },
+            {
+                name: "赵六",
+                age: 21,
+                sex: "女"
+            }
+        ];
+        var x = person.filter(function (value, index) {
+            return value.age > 20; // 筛选出年龄大于20岁的学生
+            // return value.sex=="男";     //筛选出男同学
+        });
+        //         arr.map() 映射 将数组中的所有数据按照条件改变，形成新数组
+        // 将回调函数每次的返回值，组成一个新的数组
+        // 返回值是映射改变之后的数组
+        // 不修改原数组
+        var arr7 = [1, 5, 6, 99, 5, 552, 123, 6, 622];
+        var end = arr7.map(function (value, index) {
+            return value * 2; //将数组中的所有元素都乘以2返回
+        });
+        //箭头函数
+        //var end = arr.map((value,index)=>value*2);
+        console.log(end);
+        //arr.some() 判断 根据回调函数的判断条件来选择真假
+
+        //只要有一个回调函数返回值是true，最终some结果是true；
+        var arr3 = [1, 5, 6, 663, 22, 66, 6, 622];
+        var end = arr3.some(function (value, index) {
+            return value < 500;
+        });
+        console.log(end);
+        //
+        console.log(arr);
+        //arr.reverse() 数组倒序  返回修改后的数组  改变原数组
+        arr.reverse();
+        console.log(arr);
+        var a = {
+            length: 2,
+            0: 'aaa',
+            1: 'bbb'
+        };
+        Array.from(a); //['aaa','bbb']
+        //         //Array.of
+
+        // Array.of方法用于将一组值，转换为数组。
+        // Array.of总是返回参数值组成的数组。如果没有参数，就返回一个空数组。
+
+        console.log(Array.of(undefined)); //
+        console.log(Array.of(1)); // [1]
+        console.log(Array.of(1, 2)); // [1, 2]
+        //         arr.includes()
+        // 用于检查数组是否包含某元素，包含返回true，否则返回false
+        // 无法检测对象是否存在
+        //可接收俩个参数：要搜索的值,搜索的开始索
+        console.log(arr.includes(4));
+        var arr66 = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+        arr66.sort(function () {
+            return Math.random() - 0.1
+        });
+        console.log(arr66);
+    </script>
+</body>
+
+
+</html>

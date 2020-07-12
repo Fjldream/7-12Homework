@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //当前时间
+        var date1 = new Date();
+        console.log(date1);
+        //指定时间转变成标准时间
+        // new Date("month dd,yyyy hh:mm:ss");
+        // new Date("month dd,yyyy");
+        // new Date(yyyy,mth,dd,hh,mm,ss);
+        // new Date(yyyy,mth,dd);
+        // new Date(ms);
+        var date1 = new Date("January 12,2006 22:19:35")
+        console.log(date1)
+        var time = 1513008000000 //转换成“ 2017 - 12 - 12”
+
+        //注意： time不能是string要是number
+
+        var date2 = new Date(time);
+
+        var year1 = date2.getFullYear();
+        var month = date2.getMonth() + 1;
+        var today = date2.getDate();
+        var Time1 = year1 + "-" + month + "-" + today
+        console.log(Time1);
+    </script>
+</body>
+
+</html>
